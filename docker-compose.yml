@@ -18,6 +18,8 @@ services:
      - db
     ports:
      - "10090:80"
+    # url: http://localhost:10090
+
     environment:
       WORDPRESS_DB_HOST: db:3306 # データベースサーバ名：ポート番号
       WORDPRESS_DB_USER: wp_user # WordPress用接続ユーザ名(dbの内容に合わせる)
@@ -35,3 +37,4 @@ services:
       - db
     ports:
       - 10099:80
+    # url: http://localhost:10099
