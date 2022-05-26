@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:5.7
+    container_name: wp_mysql
+    #restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root # rootユーザのパスワード（任意に指定可）
+      MYSQL_DATABASE: wp_db # WordPress用データベース名（任意に指定可）
+      MYSQL_USER: wp_user # WordPress用接続ユーザ名（任意に指定可）
+      MYSQL_PASSWORD: root # WordPress用パスワード（任意に指定可）
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wp
+    #restart: always
+    depends_on:
+     - db
+    ports:
+     - "10090:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306 # データベースサーバ名：ポート番号
+      WORDPRESS_DB_USER: wp_user # WordPress用接続ユーザ名(dbの内容に合わせる)
+      WORDPRESS_DB_PASSWORD: root # WordPress用パスワード(dbの内容に合わせる)
+      WORDPRESS_DB_NAME: wp_db # WordPress用データベース名(dbの内容に合わせる)
+      WORDPRESS_DEBUG : 1  #デバッグモードON
+    volumes:
+       - ./wordpress:/var/www/html
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin_ingrid
+    #restart: always
+    depends_on:
+      - db
+    ports:
+      - 10099:80
