@@ -1,0 +1,1 @@
+<?php include locate_template('_inc/content_archive.php'); ?>

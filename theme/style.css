@@ -1,0 +1,26 @@
+@charset "utf-8";
+/*
+Theme Name: Templateweb
+Description: This is the theme for Templateweb.
+Author: COMMUDE
+Author URI: 
+Version: 1.0
+*/
+
+
+/* =====================================
+ *  RESET
+ * ===================================== */
+
+* { font-size: 100%;line-height: 100%;border:0;outline:0;vertical-align:baseline;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;padding:0;margin:0; }
+section, article, aside, footer, header, nav, hgroup, main { display: block; }
+address { font-style: normal; }
+ul li { list-style:none; }
+ol li { margin-left: 1em; }
+span, button, strong, small, em, b { color: inherit; }
+a { color: inherit; text-decoration: none; }
+img { height: auto; vertical-align: bottom; }
+table { border-collapse:collapse; border-spacing:0;width: 100%; }
+
+/*body:before { content: ""; width: 1px; height: 100vh; position: fixed; top: 0; left: 0; right: 0; z-index: 999; background-color: #3bffff; margin: auto;}*/
+/*body:after { content: ""; width: 1200px; height: 100vh; position: fixed; top: 0; left: 0; right: 0; z-index: 999; border-left: 1px solid #3bffff; border-right: 1px solid #3bffff; margin: auto;}*/
