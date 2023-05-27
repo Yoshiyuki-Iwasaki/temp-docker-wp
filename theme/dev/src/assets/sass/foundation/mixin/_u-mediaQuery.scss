@@ -1,0 +1,13 @@
+@use '../variable' as *;
+
+@mixin u-mqMin($minW: $windowPC) {
+  @media screen and (min-width: $minW) {
+    @content;
+  }
+}
+
+@mixin u-mqMax($maxW: $windowSP) {
+  @media screen and (max-width: $maxW) {
+    @content;
+  }
+}

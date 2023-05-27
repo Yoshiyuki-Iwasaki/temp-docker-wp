@@ -1,4 +1,6 @@
 <?php
+	get_header();
+
 	$pageName = $post->post_title; // 固定ページ名前
 	$pageID = $post->ID; // 固定ページID
 	$pageSlug = $post->post_name; // 固定ページスラッグ
@@ -21,6 +23,17 @@
 	$pageCatch = get_field('pageCatch'); // cf: 固定ページのキャッチ文
 	$pageText = get_field('pageText'); // cf: 固定ページのテキスト
 
-
-	include locate_template('inc/page/page__' . $pageSlug . '.php');
+	$filename = get_stylesheet_directory().'inc/page/page__' . $pageSlug . '.php';
+	if (file_exists($filename)) {
+		include $filename;
+	} else {
+		if (have_posts()):
+			while (have_posts()) : the_post();
+				the_content();
+			endwhile;
+		else:
+			echo '投稿がありません。';
+		endif;
+	}
+	get_footer();
 ?>
