@@ -5,7 +5,6 @@
 	// show_admin_bar( false );
 
 
-
 	/*==========================================================================
 		管理画面
 	==========================================================================*/
@@ -108,7 +107,7 @@
 	--------------------------------------------------------------*/
 	function remove_menus () {
 		global $menu;
-	    global $submenu;
+		global $submenu;
 		unset($menu[5]);  // 投稿
 		unset($menu[25]); // コメント
 	    // var_dump($submenu);
@@ -195,13 +194,13 @@
 		オプションページ
 	--------------------------------------------------------------*/
 	if( function_exists('acf_add_options_page') ) {
-	    $option_page = acf_add_options_page(array(
-	        'page_title' => 'トップページスライダー', // 設定ページで表示される名前
-	        'menu_title' => 'トップページスライダー', // ナビに表示される名前
-	        'menu_slug' => 'optionpage',
-	        'capability' => 'edit_posts',
-	        'redirect' => false
-	    ));
+		$option_page = acf_add_options_page(array(
+			'page_title' => 'トップページスライダー', // 設定ページで表示される名前
+			'menu_title' => 'トップページスライダー', // ナビに表示される名前
+			'menu_slug' => 'optionpage',
+			'capability' => 'edit_posts',
+			'redirect' => false
+		));
 	}
 
 
